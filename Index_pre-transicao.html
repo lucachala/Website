@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estamos migrando</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0e0e0e;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Aviso de domínio */
+    .domain-warning {
+      background: #111;
+      color: #f5c542;
+      padding: 14px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      border-bottom: 1px solid #222;
+    }
+
+    /* Conteúdo principal */
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      opacity: 0.8;
+      max-width: 500px;
+    }
+
+    /* Botão */
+    .disabled-btn {
+      margin-top: 25px;
+      padding: 14px 26px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background: #444;
+      color: #ccc;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .disabled-btn:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="domain-warning">
+    ⚠️ Estamos migrando para um novo domínio.  
+    Por enquanto, você será redirecionado para a página antiga.
+  </div>
+
+  <div class="container">
+    <h1>Novo site em breve</h1>
+    <p>
+      Estamos finalizando a migração para um novo domínio.
+      Até lá, você pode continuar acessando normalmente pela página atual.
+    </p>
+
+    <button id="main-btn" class="disabled-btn">
+      Novo domínio em breve
+    </button>
+  </div>
+
+  <script>
+    document.getElementById("main-btn").addEventListener("click", function () {
+      alert("O novo domínio ainda não está ativo. Você será redirecionado para a página atual.");
+      window.location.href = "https://SEU-DOMINIO-ANTIGO-AQUI";
+    });
+  </script>
+
+</body>
+</html>
+
