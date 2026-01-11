@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Domínio em transição</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #0f0f0f;
+      color: #eaeaea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: white;
+      color: black;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .sub {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>⚠️ Domínio em encerramento</h1>
+    <p>
+      O endereço <strong id="old"></strong> será descontinuado em breve.
+    </p>
+    <p>
+      Novo endereço:
+      <br>
+      <strong id="new"></strong>
+    </p>
+
+    <a id="btn" href="#">Continuar</a>
+
+    <p class="sub">
+      Atualize seus links e favoritos.
+    </p>
+  </div>
+
+  <script>
+    const host = window.location.hostname;
+
+    // remove ".tucas.me"
+    const sub = host.replace(/\.tucas\.me$/, '');
+
+    // se for domínio raiz
+    const targetSub = (sub === 'tucas.me' || sub === '')
+      ? ''
+      : sub + '.';
+
+    const newDomain = targetSub + 'lucachala.com';
+
+    document.getElementById('old').textContent = host;
+    document.getElementById('new').textContent = newDomain;
+    document.getElementById('btn').href = 'https://' + newDomain;
+  </script>
+</body>
+</html>
